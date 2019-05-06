@@ -6,8 +6,11 @@ defmodule TrisWeb.GameView do
   end
 
   def mount(session, socket) do
+    game_uuid = session.game_uuid
     game_pid = session.game_pid
-    {:ok, assign(socket, game_state: Tris.GameServer.call(game_pid, :game_state))}
+
+    {:ok,
+     assign(socket, game_uuid: game_uuid, game_state: Tris.GameServer.call(game_pid, :game_state))}
   end
 
   def handle_event("play", coordinates, socket) do

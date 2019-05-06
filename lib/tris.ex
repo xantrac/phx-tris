@@ -53,21 +53,4 @@ defmodule Tris do
         }
     end
   end
-
-  def get_game(game_uuid), do: Tris.GameSupervisor.get_game(game_uuid)
-
-  def get_game do
-    case available_game do
-      {:ok, pid} -> {:ok, pid}
-      _ -> new_game
-    end
-  end
-
-  def available_game do
-  end
-
-  def new_game do
-    new_game_uuid = UUID.uuid1()
-    {:ok, pid} = Tris.GameSupervisor.get_game(new_game_uuid)
-  end
 end

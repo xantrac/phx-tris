@@ -1,3 +1,4 @@
+<%= @game_uuid %>
 <div class="board">
   <%= for row <- [0,1,2], column <- [0,1,2] do %>
   <div class="cell" phx-click="play" phx-value=<%= "#{row},#{column}" %>>
