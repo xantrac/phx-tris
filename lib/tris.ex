@@ -49,7 +49,8 @@ defmodule Tris do
       true ->
         %GameState{
           player: next_player(state.player),
-          board: Map.put_new(state.board, {row, col}, state.player)
+          board: Map.put_new(state.board, {row, col}, state.player),
+          game_uuid: state.game_uuid
         }
     end
   end
