@@ -1,0 +1,6 @@
+/.git
+/.elixir_ls
+/_build
+/releases
+/deps
+/assets/node_modules

@@ -1,4 +1,6 @@
-<%= @game_uuid %>
+<div class="game_id">
+  <%= Regex.run(~r/^[a-zA-Z0-9]*/, @game_uuid) %> // <span> <%= @game_state.player %> turn </span>
+</div>
 <div class="board">
   <%= for row <- [0,1,2], column <- [0,1,2] do %>
   <div class="cell" phx-click="play" phx-value=<%= "#{row},#{column}" %>>

@@ -22,3 +22,9 @@
   height: 100%;
   font-size: 150%;
 }
+
+.game_id {
+  text-align: center;
+  margin: 10px;
+  font-size: 2em;
+}
