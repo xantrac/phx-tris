@@ -5,8 +5,6 @@ defmodule TrisWeb.PageController do
   def index(conn, _params) do
     {game_uuid, game_pid} = Tris.GameHub.get_game()
 
-    IO.inspect(conncc)
-
     LiveView.Controller.live_render(conn, TrisWeb.GameView,
       session: %{game_pid: game_pid, game_uuid: game_uuid}
     )
